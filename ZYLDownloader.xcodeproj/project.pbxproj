@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3613AF401DAC8A02007DB881 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3613AF3F1DAC8A02007DB881 /* AFNetworkReachabilityManager.m */; };
+		3613AF431DAC8A1D007DB881 /* ZYLJudgeNetworkType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3613AF421DAC8A1D007DB881 /* ZYLJudgeNetworkType.m */; };
+		361E3C4B1D93759300D76905 /* testNu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361E3C4A1D93759300D76905 /* testNu.swift */; };
+		3630F4F21D91081400679A3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3630F4F11D91081400679A3C /* main.m */; };
+		3630F4F51D91081400679A3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3630F4F41D91081400679A3C /* AppDelegate.m */; };
+		3630F4F81D91081400679A3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3630F4F71D91081400679A3C /* ViewController.m */; };
+		3630F4FB1D91081400679A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3630F4F91D91081400679A3C /* Main.storyboard */; };
+		3630F4FD1D91081400679A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3630F4FC1D91081400679A3C /* Assets.xcassets */; };
+		3630F5001D91081400679A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3630F4FE1D91081400679A3C /* LaunchScreen.storyboard */; };
+		3630F50B1D910BAE00679A3C /* ZYLDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3630F50A1D910BAE00679A3C /* ZYLDownloader.m */; };
+		3630F50E1D91104F00679A3C /* ZYLTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3630F50D1D91104F00679A3C /* ZYLTool.m */; };
+		3630F5111D91146900679A3C /* ZYLSingleDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3630F5101D91146900679A3C /* ZYLSingleDownloader.m */; };
+		3667B6DA1D922F3E001BD87D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3667B6D91D922F3E001BD87D /* Realm.framework */; };
+		3680C0011D922F57001084A6 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3667B6D91D922F3E001BD87D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3680C0041D923236001084A6 /* ZYLSingleDownloaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3680C0031D923236001084A6 /* ZYLSingleDownloaderModel.m */; };
+		3680C0061D923790001084A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3680C0051D923790001084A6 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3667B6D71D922DCB001BD87D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3680C0011D922F57001084A6 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3613AF3E1DAC8A02007DB881 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		3613AF3F1DAC8A02007DB881 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		3613AF411DAC8A1D007DB881 /* ZYLJudgeNetworkType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLJudgeNetworkType.h; sourceTree = "<group>"; };
+		3613AF421DAC8A1D007DB881 /* ZYLJudgeNetworkType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLJudgeNetworkType.m; sourceTree = "<group>"; };
+		361E3C491D93759300D76905 /* ZYLDownloader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZYLDownloader-Bridging-Header.h"; sourceTree = "<group>"; };
+		361E3C4A1D93759300D76905 /* testNu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testNu.swift; sourceTree = "<group>"; };
+		3630F4ED1D91081300679A3C /* ZYLDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYLDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3630F4F11D91081400679A3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3630F4F31D91081400679A3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3630F4F41D91081400679A3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3630F4F61D91081400679A3C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3630F4F71D91081400679A3C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3630F4FA1D91081400679A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3630F4FC1D91081400679A3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3630F4FF1D91081400679A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3630F5011D91081400679A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3630F5091D910BAE00679A3C /* ZYLDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLDownloader.h; sourceTree = "<group>"; };
+		3630F50A1D910BAE00679A3C /* ZYLDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLDownloader.m; sourceTree = "<group>"; };
+		3630F50C1D91104F00679A3C /* ZYLTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLTool.h; sourceTree = "<group>"; };
+		3630F50D1D91104F00679A3C /* ZYLTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLTool.m; sourceTree = "<group>"; };
+		3630F50F1D91146900679A3C /* ZYLSingleDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLSingleDownloader.h; sourceTree = "<group>"; };
+		3630F5101D91146900679A3C /* ZYLSingleDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLSingleDownloader.m; sourceTree = "<group>"; };
+		3667B6D91D922F3E001BD87D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		3680C0021D923236001084A6 /* ZYLSingleDownloaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLSingleDownloaderModel.h; sourceTree = "<group>"; };
+		3680C0031D923236001084A6 /* ZYLSingleDownloaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLSingleDownloaderModel.m; sourceTree = "<group>"; };
+		3680C0051D923790001084A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3630F4EA1D91081300679A3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3680C0061D923790001084A6 /* CoreGraphics.framework in Frameworks */,
+				3667B6DA1D922F3E001BD87D /* Realm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3630F4E41D91081300679A3C = {
+			isa = PBXGroup;
+			children = (
+				3630F4EF1D91081300679A3C /* ZYLDownloader */,
+				3630F4EE1D91081300679A3C /* Products */,
+				3667B6D21D922DBC001BD87D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3630F4EE1D91081300679A3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3630F4ED1D91081300679A3C /* ZYLDownloader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3630F4EF1D91081300679A3C /* ZYLDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				3630F4F31D91081400679A3C /* AppDelegate.h */,
+				3630F4F41D91081400679A3C /* AppDelegate.m */,
+				3630F4F61D91081400679A3C /* ViewController.h */,
+				3630F4F71D91081400679A3C /* ViewController.m */,
+				3630F5081D9108AF00679A3C /* ZYLDownloader */,
+				3630F4F91D91081400679A3C /* Main.storyboard */,
+				3630F4FC1D91081400679A3C /* Assets.xcassets */,
+				3630F4FE1D91081400679A3C /* LaunchScreen.storyboard */,
+				3630F5011D91081400679A3C /* Info.plist */,
+				3630F4F01D91081400679A3C /* Supporting Files */,
+			);
+			path = ZYLDownloader;
+			sourceTree = "<group>";
+		};
+		3630F4F01D91081400679A3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3630F4F11D91081400679A3C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3630F5081D9108AF00679A3C /* ZYLDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				3630F5091D910BAE00679A3C /* ZYLDownloader.h */,
+				3630F50A1D910BAE00679A3C /* ZYLDownloader.m */,
+				3630F50F1D91146900679A3C /* ZYLSingleDownloader.h */,
+				3630F5101D91146900679A3C /* ZYLSingleDownloader.m */,
+				3680C0021D923236001084A6 /* ZYLSingleDownloaderModel.h */,
+				3680C0031D923236001084A6 /* ZYLSingleDownloaderModel.m */,
+				3630F50C1D91104F00679A3C /* ZYLTool.h */,
+				3630F50D1D91104F00679A3C /* ZYLTool.m */,
+				3613AF411DAC8A1D007DB881 /* ZYLJudgeNetworkType.h */,
+				3613AF421DAC8A1D007DB881 /* ZYLJudgeNetworkType.m */,
+				3613AF3E1DAC8A02007DB881 /* AFNetworkReachabilityManager.h */,
+				3613AF3F1DAC8A02007DB881 /* AFNetworkReachabilityManager.m */,
+				361E3C4A1D93759300D76905 /* testNu.swift */,
+				361E3C491D93759300D76905 /* ZYLDownloader-Bridging-Header.h */,
+			);
+			path = ZYLDownloader;
+			sourceTree = "<group>";
+		};
+		3667B6D21D922DBC001BD87D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3680C0051D923790001084A6 /* CoreGraphics.framework */,
+				3667B6D91D922F3E001BD87D /* Realm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3630F4EC1D91081300679A3C /* ZYLDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3630F5041D91081400679A3C /* Build configuration list for PBXNativeTarget "ZYLDownloader" */;
+			buildPhases = (
+				3630F4E91D91081300679A3C /* Sources */,
+				3630F4EA1D91081300679A3C /* Frameworks */,
+				3630F4EB1D91081300679A3C /* Resources */,
+				3667B6D71D922DCB001BD87D /* Embed Frameworks */,
+				3667B6D81D922EA3001BD87D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZYLDownloader;
+			productName = ZYLDownloader;
+			productReference = 3630F4ED1D91081300679A3C /* ZYLDownloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3630F4E51D91081300679A3C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = zyl;
+				TargetAttributes = {
+					3630F4EC1D91081300679A3C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CWEB665WS6;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 3630F4E81D91081300679A3C /* Build configuration list for PBXProject "ZYLDownloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3630F4E41D91081300679A3C;
+			productRefGroup = 3630F4EE1D91081300679A3C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3630F4EC1D91081300679A3C /* ZYLDownloader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3630F4EB1D91081300679A3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3630F5001D91081400679A3C /* LaunchScreen.storyboard in Resources */,
+				3630F4FD1D91081400679A3C /* Assets.xcassets in Resources */,
+				3630F4FB1D91081400679A3C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3667B6D81D922EA3001BD87D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3630F4E91D91081300679A3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3630F50B1D910BAE00679A3C /* ZYLDownloader.m in Sources */,
+				3613AF401DAC8A02007DB881 /* AFNetworkReachabilityManager.m in Sources */,
+				3680C0041D923236001084A6 /* ZYLSingleDownloaderModel.m in Sources */,
+				361E3C4B1D93759300D76905 /* testNu.swift in Sources */,
+				3630F4F81D91081400679A3C /* ViewController.m in Sources */,
+				3630F4F51D91081400679A3C /* AppDelegate.m in Sources */,
+				3613AF431DAC8A1D007DB881 /* ZYLJudgeNetworkType.m in Sources */,
+				3630F4F21D91081400679A3C /* main.m in Sources */,
+				3630F5111D91146900679A3C /* ZYLSingleDownloader.m in Sources */,
+				3630F50E1D91104F00679A3C /* ZYLTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3630F4F91D91081400679A3C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3630F4FA1D91081400679A3C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3630F4FE1D91081400679A3C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3630F4FF1D91081400679A3C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3630F5021D91081400679A3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3630F5031D91081400679A3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3630F5051D91081400679A3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = CWEB665WS6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/Realm.framework\"",
+				);
+				INFOPLIST_FILE = ZYLDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyldownloader.ZYLDownloaderTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZYLDownloader/ZYLDownloader/ZYLDownloader-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3630F5061D91081400679A3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = CWEB665WS6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/Realm.framework\"",
+				);
+				INFOPLIST_FILE = ZYLDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyldownloader.ZYLDownloaderTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZYLDownloader/ZYLDownloader/ZYLDownloader-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3630F4E81D91081300679A3C /* Build configuration list for PBXProject "ZYLDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3630F5021D91081400679A3C /* Debug */,
+				3630F5031D91081400679A3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3630F5041D91081400679A3C /* Build configuration list for PBXNativeTarget "ZYLDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3630F5051D91081400679A3C /* Debug */,
+				3630F5061D91081400679A3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3630F4E51D91081300679A3C /* Project object */;
+}
