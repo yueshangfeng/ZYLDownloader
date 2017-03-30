@@ -12,6 +12,7 @@
 #import "ZYLTool.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import "ZYLJudgeNetworkType.h"
+#import <UIKit/UIKit.h>
 
 @interface ZYLSingleDownloader () <NSURLSessionDelegate, NSURLSessionDownloadDelegate>
 
@@ -224,9 +225,15 @@
         NSLog(@"拷贝继续下载文件到library下失败:%@", error);
     } else {
         //拷贝成功后开启继续下载
-        NSData *newData = [self getCorrectResumeData:self.resumeData];
-        //创建下载任务，继续下载
-        self.downloadTask = [self.downloadSession downloadTaskWithResumeData:newData];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0) {
+            //创建下载任务，继续下载
+            self.downloadTask = [self.downloadSession downloadTaskWithResumeData:self.resumeData];
+        } else {
+            NSData *newData = [self getCorrectResumeData:self.resumeData];
+            //创建下载任务，继续下载
+            self.downloadTask = [self.downloadSession downloadTaskWithResumeData:newData];
+        }
+        
         [self.downloadTask resume];
     }
 }
@@ -324,7 +331,7 @@
 
 #pragma mark - 下载进度
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
-    self.currentWriten = totalBytesWritten;
+    self.currentWriten = (NSInteger)totalBytesWritten;
     self.downloaderProgress = (float)totalBytesWritten / (float)totalBytesExpectedToWrite;
     if (self.isSendState == YES) {
         [self.downloaderDelegate downloaderRate:self.downloaderProgress withDownloaderUrl:self.downloadUrl];
@@ -338,6 +345,7 @@
         if ([self.fileManager fileExistsAtPath:self.resumeDirectoryStr]) {
             //存在
             NSLog(@"此下载存在继续下载数据，不再获取继续下载数据");
+            [self parseResumeData:self.resumeData];
         } else {
             //不存在
             //在这里取得继续下载的数据
@@ -447,10 +455,17 @@
             if ([error.userInfo objectForKey:NSURLSessionDownloadTaskResumeData]) {
                 //有继续下载的数据
                 self.resumeData = [error.userInfo objectForKey:NSURLSessionDownloadTaskResumeData];
-                //获取正确的resumeData
-                NSData *newData = [self getCorrectResumeData:self.resumeData];
-                //创建下载任务，继续下载
-                self.downloadTask = [self.downloadSession downloadTaskWithResumeData:newData];
+                //判断系统版本
+                if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0) {
+                    //创建下载任务，继续下载
+                    self.downloadTask = [self.downloadSession downloadTaskWithResumeData:self.resumeData];
+                } else {
+                    //获取正确的resumeData
+                    NSData *newData = [self getCorrectResumeData:self.resumeData];
+                    //创建下载任务，继续下载
+                    self.downloadTask = [self.downloadSession downloadTaskWithResumeData:newData];
+                }
+                
                 [self.downloadTask resume];
                 
                 //分析继续下载数据
@@ -477,10 +492,17 @@
             if ([error.userInfo objectForKey:NSURLSessionDownloadTaskResumeData]) {
                 //有继续下载的数据
                 self.resumeData = [error.userInfo objectForKey:NSURLSessionDownloadTaskResumeData];
-                //获取正确的resumeData
-                NSData *newData = [self getCorrectResumeData:self.resumeData];
-                //创建下载任务，继续下载
-                self.downloadTask = [self.downloadSession downloadTaskWithResumeData:newData];
+                
+                if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0) {
+                    //创建下载任务，继续下载
+                    self.downloadTask = [self.downloadSession downloadTaskWithResumeData:self.resumeData];
+                } else {
+                    //获取正确的resumeData
+                    NSData *newData = [self getCorrectResumeData:self.resumeData];
+                    //创建下载任务，继续下载
+                    self.downloadTask = [self.downloadSession downloadTaskWithResumeData:newData];
+                }
+                
                 [self.downloadTask resume];
                 
                 //分析继续下载的数据
@@ -511,12 +533,25 @@
 - (void)parseResumeData:(NSData *)resumeData {
     NSString *XMLStr = [[NSString alloc] initWithData:resumeData encoding:NSUTF8StringEncoding];
     self.resumeString = [NSMutableString stringWithFormat:@"%@", XMLStr];
-    NSRange tmpRange = [XMLStr rangeOfString:@"NSURLSessionResumeInfoTempFileName"];
-    NSString *tmpStr = [XMLStr substringFromIndex:tmpRange.location + tmpRange.length];
-    NSRange oneStringRange = [tmpStr rangeOfString:@"<string>"];
-    NSRange twoStringRange = [tmpStr rangeOfString:@"</string>"];
-    //记录tmp文件名
-    self.tmpFilename = [tmpStr substringWithRange:NSMakeRange(oneStringRange.location + oneStringRange.length, twoStringRange.location - oneStringRange.location - oneStringRange.length)];
+    
+    //判断系统，iOS8以前和以后
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0) {
+        //iOS8包含iOS8以前
+        NSRange tmpRange = [XMLStr rangeOfString:@"NSURLSessionResumeInfoLocalPath"];
+        NSString *tmpStr = [XMLStr substringFromIndex:tmpRange.location + tmpRange.length];
+        NSRange oneStringRange = [tmpStr rangeOfString:@"CFNetworkDownload_"];
+        NSRange twoStringRange = [tmpStr rangeOfString:@".tmp"];
+        self.tmpFilename = [tmpStr substringWithRange:NSMakeRange(oneStringRange.location, twoStringRange.location + twoStringRange.length - oneStringRange.location)];
+        
+    } else {
+        //iOS8以后
+        NSRange tmpRange = [XMLStr rangeOfString:@"NSURLSessionResumeInfoTempFileName"];
+        NSString *tmpStr = [XMLStr substringFromIndex:tmpRange.location + tmpRange.length];
+        NSRange oneStringRange = [tmpStr rangeOfString:@"<string>"];
+        NSRange twoStringRange = [tmpStr rangeOfString:@"</string>"];
+        //记录tmp文件名
+        self.tmpFilename = [tmpStr substringWithRange:NSMakeRange(oneStringRange.location + oneStringRange.length, twoStringRange.location - oneStringRange.location - oneStringRange.length)];
+    }
     
     //有数据，保存到本地
     //存储数据
@@ -534,6 +569,10 @@
 #pragma mark - 更新沙盒目录缓存的继续下载数据
 - (void)updateLocalResumeData {
     if (self.downloaderState == ZYLDownloaderStateDeleted) {
+        return;
+    }
+    
+    if (self.resumeString == nil) {
         return;
     }
     

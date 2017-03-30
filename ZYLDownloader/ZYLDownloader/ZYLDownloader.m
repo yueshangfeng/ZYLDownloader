@@ -10,6 +10,7 @@
 
 #import "ZYLTool.h"
 #import "ZYLJudgeNetworkType.h"
+#import <UIKit/UIKit.h>
 
 static ZYLDownloader *_downloader;
 static dispatch_once_t onceToken1;
@@ -36,7 +37,7 @@ static dispatch_once_t onceToken2;
 @property (strong, nonatomic) NSMutableArray *singleDownloaderArray;
 
 //用于存储原始的从数据库中读取的下载信息
-@property (strong, nonatomic) RLMResults<ZYLSingleDownloaderModel *> *allModels;
+@property (strong, nonatomic) RLMResults <ZYLSingleDownloaderModel *> *allModels;
 
 //用于存储正在下载的下载器的数组
 @property (strong, nonatomic) NSMutableArray *downloadingArray;
@@ -630,12 +631,32 @@ static dispatch_once_t onceToken2;
             if ([self.fileManager fileExistsAtPath:resumeDataStr]) {
                 NSData *tempData = [NSData dataWithContentsOfFile:resumeDataStr];
                 NSString *XMLStr = [[NSString alloc] initWithData:tempData encoding:NSUTF8StringEncoding];
-                NSRange tmpRange = [XMLStr rangeOfString:@"NSURLSessionResumeInfoTempFileName"];
-                NSString *tmpStr = [XMLStr substringFromIndex:tmpRange.location + tmpRange.length];
-                NSRange oneStringRange = [tmpStr rangeOfString:@"<string>"];
-                NSRange twoStringRange = [tmpStr rangeOfString:@"</string>"];
+                NSString *tmpStr = nil;
+                if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0) {
+                    //适配iOS 8以及之前的系统，由于resumeData不一样
+                    //iOS8包含iOS8以前
+                    NSRange tmpRange = [XMLStr rangeOfString:@"NSURLSessionResumeInfoLocalPath"];
+                    NSString *tmpString = [XMLStr substringFromIndex:tmpRange.location + tmpRange.length];
+                    NSRange oneStringRange = [tmpString rangeOfString:@"CFNetworkDownload_"];
+                    NSRange twoStringRange = [tmpString rangeOfString:@".tmp"];
+                    tmpStr = [tmpString substringWithRange:NSMakeRange(oneStringRange.location, twoStringRange.location + twoStringRange.length - oneStringRange.location)];
+                    
+                } else {
+                    //iOS8以后
+                    NSRange tmpRange = [XMLStr rangeOfString:@"NSURLSessionResumeInfoTempFileName"];
+                    NSString *tmpString = [XMLStr substringFromIndex:tmpRange.location + tmpRange.length];
+                    NSRange oneStringRange = [tmpString rangeOfString:@"<string>"];
+                    NSRange twoStringRange = [tmpString rangeOfString:@"</string>"];
+                    //记录tmp文件名
+                    tmpStr = [tmpString substringWithRange:NSMakeRange(oneStringRange.location + oneStringRange.length, twoStringRange.location - oneStringRange.location - oneStringRange.length)];
+                }
+                
+//                NSRange tmpRange = [XMLStr rangeOfString:@"NSURLSessionResumeInfoTempFileName"];
+//                NSString *tmpStr = [XMLStr substringFromIndex:tmpRange.location + tmpRange.length];
+//                NSRange oneStringRange = [tmpStr rangeOfString:@"<string>"];
+//                NSRange twoStringRange = [tmpStr rangeOfString:@"</string>"];
                 //记录tmp文件名
-                downloaderModel.tmpFilename = [tmpStr substringWithRange:NSMakeRange(oneStringRange.location + oneStringRange.length, twoStringRange.location - oneStringRange.location - oneStringRange.length)];
+                downloaderModel.tmpFilename = tmpStr;
                 
                 //存在则删除
                 if (![self.fileManager removeItemAtPath:resumeDataStr error:nil]) {

@@ -68,7 +68,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.downloadUrl = @"http://sbslive.cnrmobile.com/storage/storage2/18/01/18/46eeb50b3f21325a6f4bd0e8ba4d2357.3gp";
+    self.downloadUrl = @"http://jlzg.cnrmobile.com/resource/index/sp/jlzg0226.mp4";
     
     self.dowl = [ZYLDownloader sharedDownloader];
     
@@ -76,7 +76,7 @@
     
     self.dowl.zylDownloaderDelegate = self;
     
-    self.urlArray = @[@"http://sbslive.cnrmobile.com/storage/storage2/18/01/18/46eeb50b3f21325a6f4bd0e8ba4d2357.3gp", @"http://sbslive.cnrmobile.com/storage/storage2/51/34/18/3e59db9bb51802c2ef7034793296b724.3gp", @"http://sbslive.cnrmobile.com/storage/storage2/05/61/05/f2609b3b964bbbcfb3e3703dde59a994.3gp", @"http://sbslive.cnrmobile.com/storage/storage2/28/11/28/689f8a52fbef0fbbf51db19ee3276ae5.3gp", @"http://sbslive.cnrmobile.com/storage/storage2/71/28/05/512551c6fcf71615ad5f8ae9bd524069.3gp"];
+    self.urlArray = @[@"http://jlzg.cnrmobile.com/resource/index/sp/jlzg0226.mp4", @"http://sbslive.cnrmobile.com/storage/storage2/51/34/18/3e59db9bb51802c2ef7034793296b724.3gp", @"http://sbslive.cnrmobile.com/storage/storage2/05/61/05/f2609b3b964bbbcfb3e3703dde59a994.3gp", @"http://sbslive.cnrmobile.com/storage/storage2/28/11/28/689f8a52fbef0fbbf51db19ee3276ae5.3gp", @"http://sbslive.cnrmobile.com/storage/storage2/71/28/05/512551c6fcf71615ad5f8ae9bd524069.3gp"];
 }
 
 #pragma mark - 开始下载
@@ -261,7 +261,7 @@
 }
 
 - (void)downloaderState:(ZYLDownloaderState)state andDownloaderUrl:(NSString *)downloaderUrl {
-    //NSLog(@"下载器的状态%lu", (unsigned long)state);
+    NSLog(@"下载器的状态%lu", (unsigned long)state);
 }
 
 @end
