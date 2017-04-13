@@ -233,7 +233,7 @@
         speedStr = [NSString stringWithFormat:@"下载速度为：%.2lfmb/s", (long)speed / 1024.0 / 1024.0];
     }
     
-   // NSLog(@"文件：%@的下载速度：%@", downloaderUrl,speedStr);
+    NSLog(@"文件：%@的下载速度：%@", downloaderUrl,speedStr);
 }
 
 - (void)downloaderRate:(float)rate withDownloaderUrl:(NSString *)downloaderUrl {
