@@ -65,7 +65,7 @@
 + (void)destoryDownloader;
 
 /**
- * 拿到下载链接开始下载，要求传入文件名称和文件类型(mp4/3gp/mp3/doc...)，isHand表示是否优先下载
+ * 拿到下载链接开始下载，要求传入文件名称和文件类型(mp4/3gp/mp3/doc/zip...)，isHand表示是否优先下载
  */
 - (void)startDownloadWithDownloadUrl:(NSString *)downloadUrl filename:(NSString *)filename fileType:(NSString *)fileType isHand:(BOOL)isHand;
 
