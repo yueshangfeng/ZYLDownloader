@@ -20,7 +20,7 @@
 @property (strong, nonatomic) NSURLSessionDownloadTask *downloadTask;
 
 //下载设置
-@property (strong, nonatomic) NSURLSession *downloadSession;
+@property (weak, nonatomic) NSURLSession *downloadSession;
 
 //文件管理器
 @property (strong, nonatomic) NSFileManager *fileManager;
